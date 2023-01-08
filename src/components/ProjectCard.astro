@@ -1,0 +1,81 @@
+---
+import { Icon } from "astro-icon";
+
+export interface Props {
+  name: string;
+  src: string;
+  alt: string;
+  href?: string;
+  gh?: string;
+  accent?: string;
+}
+
+const { name, src, alt, href, gh, accent } = Astro.props;
+const ghBase = "https://github.com/neeia/";
+---
+
+<li class="card">
+  <img src={`img/projects/${src}`} width="420px" height="255px" alt={alt} title={alt} />
+  <div class="title-container">
+    <h3>{name}</h3>
+    <div class="ext">
+      {
+        href && (
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            <Icon name="ri:external-link-fill" title="Visit Page" />
+          </a>
+        )
+      }
+      {
+        gh && (
+          <a href={`${ghBase}${gh}`} target="_blank" rel="noopener noreferrer">
+            <Icon name="simple-icons:github" title="Visit Repo" />
+          </a>
+        )
+      }
+    </div>
+    <slot name="tech" />
+  </div>
+  <div><slot /></div>
+</li>
+
+<style define:vars={{ accent }}>
+  .card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.2);
+    border-bottom: 8px solid var(--accent);
+    overflow: hidden;
+    padding-bottom: 1em;
+    gap: 0.25em;
+  }
+  li > div {
+    padding: 0px 10px;
+  }
+  .title-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    margin: 8px 0px 2px 0px;
+  }
+  h3 {
+    margin: 0px;
+    font-size: 1.25em;
+  }
+  a {
+    text-decoration: none;
+    display: contents;
+  }
+  .ext {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 16px;
+  }
+  svg {
+    height: 1.25em;
+  }
+  [astro-icon] {
+    filter: brightness(0) invert() brightness(50%);
+  }
+</style>

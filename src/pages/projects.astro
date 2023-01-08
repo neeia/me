@@ -1,0 +1,92 @@
+---
+import { Icon } from "astro-icon";
+import ProjectCard from "../components/ProjectCard.astro";
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="Projects">
+  <style>
+    ul {
+      list-style-type: none;
+      padding: unset;
+    }
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 420px));
+      gap: 2em;
+      margin: 16px;
+      padding: 0;
+    }
+    .tech-stack {
+      display: flex;
+      background: #ddd;
+      border-radius: 9999px;
+      padding: 6px 8px 6px 12px;
+      gap: 8px;
+      justify-content: center;
+      align-items: center;
+    }
+    .tech-stack > li {
+      display: contents;
+    }
+    svg {
+      height: 1.25em;
+    }
+    [astro-icon] {
+      filter: brightness(0) invert() brightness(50%);
+    }
+  </style>
+  <ul class="card-container">
+    <ProjectCard
+      name="Krooster"
+      src="krooster.webp"
+      alt="A user's collection."
+      href="https://krooster.com/"
+      gh="ak-roster"
+      accent="#ffd440"
+    >
+      <ul class="tech-stack" slot="tech">
+        <li><Icon name="simple-icons:typescript" title="Typescript" /></li>
+        <li><Icon name="simple-icons:nextdotjs" title="Next.js" /></li>
+        <li><Icon name="simple-icons:firebase" title="Firebase" /></li>
+        <li><Icon name="simple-icons:mui" title="MUI" /></li>
+      </ul>
+      Collection and progress tracker for Arknights, a game by Hypergryph.
+    </ProjectCard>
+    <ProjectCard
+      name="Songb♪rd"
+      src="songbrd.webp"
+      alt="Game over screen."
+      href="https://songbrd.app/"
+      gh="songbrd"
+      accent="#bb98e5"
+    >
+      <ul class="tech-stack" slot="tech">
+        <li><Icon name="simple-icons:typescript" title="Typescript" /></li>
+        <li><Icon name="simple-icons:nextdotjs" title="Next.js" /></li>
+        <li><Icon name="simple-icons:firebase" title="Firebase" /></li>
+        <li>
+          <Icon
+            name="vscode-icons:file-type-vanilla-extract"
+            title="Vanilla Extract"
+          />
+        </li>
+      </ul>
+      Generates semi-random words from the lyrics of songs in a Spotify playlist.
+    </ProjectCard>
+    <ProjectCard
+      name="Buckit"
+      src="buckit.webp"
+      alt=""
+      href="https://buckit.app/"
+      gh="buckit"
+      accent="#17d171"
+    >
+      <ul class="tech-stack" slot="tech">
+        <li><Icon name="simple-icons:svelte" title="Svelte" /></li>
+        <li><Icon name="simple-icons:firebase" title="Firebase" /></li>
+      </ul>
+      Lifetime to-do list that splits goals into buckets for various lengths of time.
+    </ProjectCard>
+  </ul>
+</Layout>

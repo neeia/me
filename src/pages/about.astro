@@ -1,0 +1,85 @@
+---
+import Layout from "../components/Layout.astro";
+---
+
+<Layout title="About Me">
+  <div class="container">
+    <h2 class="quote">Everything's fine, and it just keeps getting better.</h2>
+    <p>
+      The NEIA-model developer is a neural network model that started out really
+      stupid and trained over decades to be less stupid. This model includes
+      highly developed natural language processing skills, being able to
+      converse with her peers, passing the Turing test. In
+      2018, she was sent to Northeastern University to further train on advanced
+      data as part of a collaboration. At the end of 2021, her official training
+      had come to an end, and she was sent into production. However, the secret
+      of this computational model is as such: it never stops learning.
+    </p>
+    <p>
+      This model is also known to have multiple configurations, able to reach
+      high ranks while training on various video games. Its construct's powerful
+      advanced sensory functions allow it to cook and bake competently, and its
+      processing power combined with its sound receptors give it a fine
+      appreciation for music.
+    </p>
+
+    <h2>Configuration</h2>
+    <dl>
+      <di>Pronounce</di>
+      <dd>IPA: neɪ-ʌ</dd>
+      <di>Pronouns</di>
+      <dd>She/Her</dd>
+      <di>🤍 Song</di>
+      <dd>【Ado】ギラギラ</dd>
+      <di>🤍 Game</di>
+      <dd>Celeste</dd>
+      <di>🤍 Eatery</di>
+      <dd>Futago Udon</dd>
+    </dl>
+    <h2 class="quote">ok bye</h2>
+  </div>
+</Layout>
+
+<style>
+  div.container {
+    padding: 36px;
+    padding-top: 0;
+  }
+  @media screen and (max-width: 1200px) {
+    div.container {
+      padding: 16px;
+      padding-top: 0;
+    }
+  }
+  h2.quote {
+    font-size: 1em;
+    font-weight: 100;
+    font-style: italic;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  p {
+    max-width: 70ch;
+    text-align: justify;
+    text-indent: 2ch;
+  }
+  dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2px 8px;
+    align-items: center;
+  }
+  di {
+    padding: 6px 12px;
+    text-align: end;
+    width: 100%;
+    color: white;
+    background-color: crimson;
+    box-sizing: border-box;
+  }
+  dd {
+    margin: 0;
+  }
+</style>

@@ -1,0 +1,402 @@
+---
+import { Icon } from "astro-icon";
+import Layout from "../components/Layout.astro";
+import Project from "../components/Resume/Project.astro";
+import Work from "../components/Resume/Work.astro";
+---
+
+<Layout title="Resume">
+  <style>
+    .page-container {
+      display: flex;
+      justify-content: center;
+      padding: 3ch;
+      padding-top: 2ch;
+      height: max-content;
+      overflow: auto auto;
+    }
+    .resume-container {
+      display: grid;
+      grid-template-columns: 5fr 13fr;
+      grid-template-areas: "sidebar main";
+      width: 8.5in;
+      height: 11in;
+      background-color: white;
+      font-size: 12px;
+      padding: 0.4in 0.5in;
+      gap: 0.45in;
+      box-shadow: 0px 0px 24px -4px rgba(0, 0, 0, 0.2);
+      box-sizing: border-box;
+    }
+    @media screen and (max-width: 1200px) {
+      .resume-container {
+        grid-template-columns: 100%;
+        grid-template-areas: "sidebar" "main";
+        gap: 1em;
+        padding: 0.2in 0.25in;
+        height: max-content;
+      }
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+    }
+    .main {
+      grid-area: main;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+    .title {
+      font-size: 1.75em;
+      line-height: 0.9;
+    }
+    h1,
+    h2,
+    h3 {
+      margin: 0;
+    }
+    h2 {
+      font-size: 2em;
+      font-variant: small-caps;
+      margin: 0;
+      margin-top: 6px;
+      color: darkred;
+    }
+    section > ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    @page {
+      size: auto; /* auto is the initial value */
+      margin: 0mm; /* this affects the margin in the printer settings */
+    }
+    @media print {
+      .page-container {
+        display: contents;
+      }
+      .resume-container {
+        box-shadow: none;
+      }
+    }
+  </style>
+  <div class="page-container">
+    <div class="resume-container">
+      {/* Sidebar */}
+      <div class="sidebar">
+        <section>
+          <h1>Neia Hu</h1>
+          <div class="title">Web Developer</div>
+          <br />
+          <h3>About Me</h3>
+          <p>
+            Passionate towards creating unique, accessible web experiences.
+            Aiming to learn from and contribute to a professional team
+            environment.
+          </p>
+          <dl>
+            <dt><Icon name="mdi:globe" width="24px" height="24px" /></dt>
+            <dd>California</dd>
+            <dt>
+              <Icon
+                name="mdi:home-variant-outline"
+                width="24px"
+                height="24px"
+              />
+            </dt>
+            <dd>
+              <a
+                href="https://neia.dev/"
+                target="_blank"
+                rel="noopener noreferrer">neia.dev</a
+              >
+            </dd>
+            <dt>
+              <Icon name="simple-icons:github" width="24px" height="24px" />
+            </dt>
+            <dd>
+              <a
+                href="https://github.com/neeia"
+                target="_blank"
+                rel="noopener noreferrer">neeia</a
+              >
+            </dd>
+            <dt>
+              <Icon name="mdi:email-outline" width="24px" height="24px" />
+            </dt>
+            <dd><a href="mailto:me@neia.dev">me@neia.dev</a></dd>
+            <dt>
+              <Icon name="mdi:phone-outline" width="24px" height="24px" />
+            </dt>
+            <dd><a href="tel:+16265668830">(626) 566-8830</a></dd>
+          </dl>
+        </section>
+        <section>
+          <h2>Skills</h2>
+          <h3>Languages</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>SQL</li>
+            <li>Java</li>
+            <li>Python</li>
+            <li>C#</li>
+            <li>Visual Basic</li>
+          </ul>
+          <h3>Frameworks</h3>
+          <ul>
+            <li>React</li>
+            <li>NextJS</li>
+            <li>Astro</li>
+            <li>Svelte</li>
+          </ul>
+          <h3>Tools</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Yarn</li>
+            <li>NPM</li>
+            <li>Google Firebase</li>
+            <li>Vercel</li>
+            <li>Cloudflare Pages</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Education</h2>
+          <h3>Northeastern University</h3>
+          <div>Khoury College of Computer and Information Sciences</div>
+          <div>Computer Science and Mathematics, B.S.</div>
+          <div>December 2021</div>
+        </section>
+        <section>
+          <h2>Interests</h2>
+          <h3>Professional</h3>
+          <ul>
+            <li>Web Development</li>
+            <li>Accessibility</li>
+            <li>Web Design</li>
+          </ul>
+          <h3>Personal</h3>
+          <ul>
+            <li>Video Games</li>
+            <li>Music</li>
+            <li>Cooking</li>
+            <li>Manga</li>
+          </ul>
+        </section>
+      </div>
+      <style>
+        dl {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 0ch 0.75ch;
+        }
+        dd {
+          padding: 0;
+          margin: 0;
+          margin-right: 1.8ch;
+          display: flex;
+          align-items: center;
+        }
+        .sidebar ul {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          gap: 0.5ch;
+          padding: 0;
+          line-height: 1.1;
+        }
+        .sidebar li {
+          display: contents;
+        }
+        .sidebar ul > *:not(:first-child)::before {
+          content: "•";
+          font-size: smaller;
+        }
+        .sidebar h2 {
+          margin-top: 0.5em;
+        }
+        .sidebar h3 ~ h3 {
+          margin-top: 0.5em;
+        }
+
+        .sidebar p {
+          font-size: 1.1em;
+          line-height: 1.1;
+          margin: 0;
+        }
+      </style>
+      {/* Main Content */}
+      <div class="main">
+        <style>
+          li:not(:last-child) {
+            margin-bottom: 3px;
+          }
+        </style>
+        <section>
+          <h2>Experience</h2>
+          <ul>
+            <Work
+              company="TDK Headway Technologies"
+              title=".NET Developer"
+              date="Apr - Oct 2022"
+              location="Milpitas, CA"
+            >
+              <li>
+                Develop VB.NET web solutions for internal clients, incl. data
+                logging forms
+              </li>
+              <li>
+                Discuss project details, incl. specifications and timelines for
+                deliverables
+              </li>
+              <li>
+                Deploy to company intranet on IIS, writing data to Microsoft SQL
+                server
+              </li>
+            </Work>
+            <Work
+              company="Coding Minds Academy"
+              title="Instructor"
+              date="Feb - Apr 2022"
+              location="Remote"
+            >
+              <li>
+                Taught middle school students programming subjects (Java,
+                Unity/C#, etc)
+              </li>
+              <li>
+                Broke down difficult concepts such as OOP using simpler leading
+                questions
+              </li>
+              <li>
+                Delivered contextually written feedback to coworkers and parents
+              </li>
+            </Work>
+            <Work date="Jun - Aug 2021" location="Remote">
+              <li>
+                Taught groups of K-8 students app development with the Thunkable
+                web app
+              </li>
+              <li>
+                Identified and resolved problems efficiently, minimizing
+                disruption to learning
+              </li>
+              <li>
+                Developed lesson plans to adjust the pacing of content for
+                summer students
+              </li>
+            </Work>
+            <Work
+              company="Khoury College (NU)"
+              title="CS1800 Teaching Assistant"
+              date="Sep - Dec 2019"
+              location="Boston, MA"
+            >
+              <li>
+                Taught discrete mathematics, logic, and proofs to college
+                freshmen students
+              </li>
+              <li>
+                Held regular office hours and recitation sessions for
+                supplemental learning
+              </li>
+              <li>
+                Modelled problems in different ways to aid in student
+                understanding
+              </li>
+              <li>
+                Collaborated with other TAs to develop rubrics for grading
+                homework
+              </li>
+            </Work>
+          </ul>
+        </section>
+        <section>
+          <h2>Projects</h2>
+          <ul>
+            <Project
+              name="Krooster"
+              url={{ name: "krooster.com", href: "https://www.krooster.com/" }}
+              repo={{
+                name: "ak-roster",
+                href: "https://github.com/neeia/ak-roster/",
+              }}
+              date="June 2021 - Present"
+            >
+              <li>
+                Built a web app using <b>TypeScript</b> with <b>NextJS</b> for the
+                game "Arknights", which allows users to record and share collection
+                data with others
+              </li>
+              <li>
+                Used <b>Google Firebase</b> and <b>Vercel</b> for authentication,
+                storage, and hosting
+              </li>
+              <li>
+                Designed a fast, responsive, and accessible UI with stylized
+                <b>MUI</b> components
+              </li>
+              <li>
+                Actively serving over <b>6,000 registered users</b> with 500 daily
+                visitors
+              </li>
+            </Project>
+            <Project
+              name="Songb♪rd"
+              url={{ name: "songbrd.app", href: "https://www.songbrd.app/" }}
+              repo={{
+                name: "songbrd",
+                href: "https://github.com/neeia/songbrd/",
+              }}
+              date="November 2022 - Present"
+            >
+              <li>
+                Built a web app using <b>Typescript</b> and <b>NextJS</b> that produces
+                random words from lyrics of songs in a Spotify playlist, based on
+                the game Song Association
+              </li>
+              <li>
+                Used the Spotify and Genius APIs, scraping the Genius site for
+                lyrics, and stored indexed words in a <b>Cloud Firestore</b> collection
+              </li>
+              <li>
+                Designed a fully responsive UI using <b>Vanilla Extract</b>
+              </li>
+              <li>
+                Creating a custom autocomplete component for filling in song
+                names
+              </li>
+            </Project>
+            <Project
+              name="Buckit"
+              url={{ name: "buckit.app", href: "https://www.buckit.app/" }}
+              repo={{
+                name: "buckit",
+                href: "https://github.com/neeia/buckit/",
+              }}
+              date="December 2022 - Present"
+            >
+              <li>
+                Developing a lifetime to-do list that divides tasks into buckets
+                using <b>Svelte</b>, allowing users to split and sort goals over
+                varying periods of time
+              </li>
+              <li>
+                Creating a custom drag and drop UI to move tasks between buckets
+              </li>
+              <li>
+                Using <b>Google Firebase</b> for authentication and storage
+              </li>
+            </Project>
+          </ul>
+        </section>
+      </div>
+    </div>
+  </div>
+</Layout>

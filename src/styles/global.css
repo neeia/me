@@ -5,9 +5,7 @@
  */
 body {
 	font-family: Verdana, sans-serif;
-	margin: auto;
-	padding: 20px;
-	max-width: 65ch;
+	margin: 0;
 	text-align: left;
 	background-color: #fff;
 	word-wrap: break-word;
@@ -26,10 +24,11 @@ b {
 	color: #222;
 }
 a {
-	color: #3273dc;
+	color: crimson;
 }
 nav a {
 	margin-right: 10px;
+  text-decoration: none;
 }
 textarea {
 	width: 100%;
