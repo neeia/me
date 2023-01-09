@@ -32,5 +32,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
   }
   li.inactive::marker {
     content: "";
+    color: transparent;
+    display: none;
   }
 </style>
