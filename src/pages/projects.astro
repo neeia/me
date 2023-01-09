@@ -21,7 +21,7 @@ import Layout from "../components/Layout.astro";
       display: flex;
       background: #ddd;
       border-radius: 9999px;
-      padding: 6px 8px 6px 12px;
+      padding: 6px 10px 6px 12px;
       gap: 8px;
       justify-content: center;
       align-items: center;
@@ -87,6 +87,19 @@ import Layout from "../components/Layout.astro";
         <li><Icon name="simple-icons:firebase" title="Firebase" /></li>
       </ul>
       Lifetime to-do list that splits goals into buckets for various lengths of time.
+    </ProjectCard>
+    <ProjectCard
+      name="ME"
+      src="this.png"
+      alt="Wow, how recursive!"
+      href="https://buckit.app/"
+      gh="buckit"
+      accent="crimson"
+    >
+      <ul class="tech-stack" slot="tech">
+        <li><Icon name="simple-icons:astro" title="Astro" /></li>
+      </ul>
+      Makes you really, really want to reach out to schedule an interview with me.
     </ProjectCard>
   </ul>
 </Layout>
