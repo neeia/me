@@ -1,8 +1,0 @@
-{
-  "name": "Neia Hu",
-  "short_name": "Neia",
-  "description": "Personal website.",
-  "start_url": "/",
-  "display": "standalone",
-  "theme_color": "#dc143c"
-}
