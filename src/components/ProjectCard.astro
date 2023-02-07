@@ -15,7 +15,7 @@ const ghBase = "https://github.com/neeia/";
 ---
 
 <li class="card">
-  <img src={`/img/projects/${src}`} width="420px" height="255px" alt={alt} title={alt} />
+  <img src={`/img/projects/${src}`} class="proj-img" alt={alt} title={alt} />
   <div class="title-container">
     <h3>{name}</h3>
     <div class="ext">
@@ -49,6 +49,10 @@ const ghBase = "https://github.com/neeia/";
     overflow: hidden;
     padding-bottom: 1em;
     gap: 0.25em;
+  }
+  img.proj-img {
+    max-width: 420px;
+    height: 255px
   }
   li > div {
     padding: 0px 10px;
