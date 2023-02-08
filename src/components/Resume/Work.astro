@@ -10,7 +10,7 @@ const { company, title, date, location } = Astro.props;
 ---
 
 <li>
-  <div>
+  <div class="company">
     {company && <h3>{company}</h3>}
     {title && <span>{title}</span>}
   </div>
@@ -40,12 +40,15 @@ const { company, title, date, location } = Astro.props;
     font-size: 1.4em;
   }
 
-  @media screen and (max-width: 1200px) {
+  @media screen and (max-width: 500px) {
     div {
       flex-wrap: wrap;
       gap: 0;
       line-height: 1.2;
       margin-bottom: 4px;
+    }
+    div.company {
+      flex-direction: column;
     }
     div > *:not(:first-child)::before {
       content: "";
