@@ -9,7 +9,7 @@ export interface Props {
 const { company, title, date, location } = Astro.props;
 ---
 
-<li>
+<li class={company ? "" : "no-company"}>
   <div class="company">
     {company && <h3>{company}</h3>}
     {title && <span>{title}</span>}
@@ -24,6 +24,10 @@ const { company, title, date, location } = Astro.props;
 </li>
 
 <style>
+  li.no-company {
+    margin-top: -0.5em;
+  }
+
   div {
     display: flex;
     align-items: baseline;
@@ -61,13 +65,12 @@ const { company, title, date, location } = Astro.props;
 
   .date {
     font-size: 0.9em;
-    line-height: 1;
   }
 
   ul {
-    padding-left: 2.5ch;
+    padding-left: 4ch;
     line-height: 1.25;
     margin-top: 0.75em;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.75em;
   }
 </style>
