@@ -19,15 +19,23 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
     font-size: 1.25em;
     margin-top: 8px;
     font-variant: small-caps;
+    color: #ddd;
+    transition: color 0.15s;
   }
   li.active {
     padding-left: 3px;
     font-weight: bolder;
   }
+  li.active > a {
+    color: #fff;
+  }
   li.active::marker {
     content: "▶";
-    font-size: x-large;
+    font-size: large;
     line-height: 0;
+    color: crimson;
+  }
+  li.inactive > a:hover {
     color: crimson;
   }
   li.inactive::marker {

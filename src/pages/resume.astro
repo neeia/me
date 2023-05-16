@@ -169,46 +169,65 @@ import Work from "../components/Resume/Work.astro";
         <h2>Experience</h2>
         <ul>
           <Work
+            company="Calmesa Chemicals"
+            title="Web Developer"
+            date="Dec 2022 - May 2023"
+            location="San Gabriel, CA"
+          >
+            <li>
+              Built a static website for viewing chemical products using
+              <b>Astro</b>
+            </li>
+            <li>
+              Converted rough spreadsheets and documents into a clean,
+              straightforward interface
+            </li>
+            <li>
+              Maintained regular communication with clients to ensure deadlines
+              were met and visions were aligned
+            </li>
+          </Work>
+          <Work
             company="TDK Headway Technologies"
             title=".NET Developer"
             date="Apr – Oct 2022"
             location="Milpitas, CA"
           >
             <li>
-              Developed internal VB.NET web solutions, such as data logging
-              forms to write to Microsoft SQL server
+              Developed internal <b>VB.NET</b> web solutions, such as data logging
+              forms to write to <b>Microsoft SQL server</b>
             </li>
             <li>
               Discussed project details, specifications, and timelines for
               deliverables with internal clients
             </li>
           </Work>
-          <Work
-            company="Coding Minds Academy"
-            title="Instructor"
-            date="Feb – Apr 2022"
-            location="Remote"
-          >
-            <li>
-              Taught middle school students coding, breaking down advanced
-              concepts like OOP into simple bits
-            </li>
-            <li>
-              Delivered contextually written feedback to coworkers and parents
-              after each session
-            </li>
-          </Work>
-          <Work date="Jun – Aug 2021" location="Arcadia & Irvine, CA">
-            <li>
-              Taught groups of K-8 students block coding and developed new
-              lesson plans for the short summer
-            </li>
-            <li>
-              Resolved problems efficiently, minimizing disruption and
-              improvizing content for fast learners
-            </li>
-          </Work>
           <div class="hide-print">
+            <Work
+              company="Coding Minds Academy"
+              title="Instructor"
+              date="Feb – Apr 2022"
+              location="Remote"
+            >
+              <li>
+                Taught middle school students coding, breaking down advanced
+                concepts like OOP into simple bits
+              </li>
+              <li>
+                Delivered contextually written feedback to coworkers and parents
+                after each session
+              </li>
+            </Work>
+            <Work date="Jun – Aug 2021" location="Arcadia & Irvine, CA">
+              <li>
+                Taught groups of K-8 students block coding and developed new
+                lesson plans for the short summer
+              </li>
+              <li>
+                Resolved problems efficiently, minimizing disruption and
+                improvizing content for fast learners
+              </li>
+            </Work>
             <Work
               company="Khoury College (NU)"
               title="CS1800 Teaching Assistant"
@@ -240,21 +259,33 @@ import Work from "../components/Resume/Work.astro";
             date="June 2021 – Present"
           >
             <li>
-              Built a web app using <b>TypeScript</b> with <b>NextJS</b> for the
-              game "Arknights", which allows users to record and share in-game collection
-              data with other players and includes a number of useful tools
+              Built an open source web app using <b>TypeScript</b> with
+              <b>NextJS</b> for the game "Arknights", which allows users to record
+              and share in-game collections with other players and includes a number
+              of useful tools
             </li>
             <li>
-              Used <b>Google Firebase Realtime Database</b> and <b>Vercel</b> for
+              Used <b>Supabase</b> hosted <b>Postgresql</b> and <b>Vercel</b> for
               authentication, storage, and hosting
             </li>
             <li>
-              Designed a fast, responsive, and accessible UI with stylized
-              <b>MUI</b> components
+              Actively serving over <b>8,000 registered users</b> with regular updates,
+              issue tracking, and bug fixes
+            </li>
+          </Project>
+          <Project name="KQM: Star Rail" date="May 2023 – Present">
+            <li>
+              Collaborating with a small team of three others to modernize an
+              aged Wordpress site for the game "Honkai: Star Rail", which hosts
+              guides, data, and other written content
             </li>
             <li>
-              Actively serving over <b>7,000 registered users</b> with regular updates,
-              user support, and bug fixes
+              Prototyping an accessible, streamlined, modern new UI using
+              <b>Figma</b> alongside other contributors
+            </li>
+            <li>
+              Pivoting away from Wordpress towards <b>Strapi</b> to enable our content
+              creation team to work rapidly
             </li>
           </Project>
           <Project
@@ -267,17 +298,13 @@ import Work from "../components/Resume/Work.astro";
             date="November 2022 – Present"
           >
             <li>
-              Built a web app using <b>Typescript</b> and <b>NextJS</b> that produces
-              random words from the lyrics of songs in a Spotify playlist, based
-              on the game Song Association
-            </li>
-            <li>
-              Scraped Genius for lyrics alongside the Spotify and Genius APIs,
-              and indexed results in <b>Cloud Firestore</b>
+              Built an open source web app using <b>Typescript</b> and <b>NextJS</b> that produces
+              random words from the lyrics of songs in a Spotify playlist using the
+              Spotify and Genius APIs, based on the game Song Association
             </li>
             <li>
               Designed a fully responsive UI using <b>Vanilla Extract</b>,
-              including a custom autocomplete component
+              including an accessible autocomplete component
             </li>
           </Project>
           <div class="hide-print">
@@ -328,16 +355,18 @@ import Work from "../components/Resume/Work.astro";
           <li>NextJS</li>
           <li>Astro</li>
           <li>Svelte</li>
+          <li>Express.js</li>
         </ul>
         <h3>Tools</h3>
         <ul class="dot-list">
+          <li>Node.js</li>
           <li>Git</li>
           <li>GitHub</li>
           <li>Yarn</li>
           <li>NPM</li>
-          <li>Express.js</li>
-          <li>Google Firebase</li>
-          <li>Storybook</li>
+          <li>Redux</li>
+          <li>Firebase</li>
+          <li>Supabase</li>
           <li>MongoDB</li>
           <li>Vercel</li>
           <li>Cloudflare Pages</li>
@@ -346,20 +375,24 @@ import Work from "../components/Resume/Work.astro";
       <section>
         <h2>Education</h2>
         <h3>Northeastern University</h3>
-        <div>Computer Science and Mathematics, B.S.</div>
-        <div>December 2021</div>
+        <div>
+          Computer Science and Mathematics, B.S. <span
+            style="font-style: italic;"
+          >
+            | December 2021</span
+          >
+        </div>
       </section>
       <section>
         <h2>Interests</h2>
         <ul class="dot-list">
           <li>Web Development</li>
-          <li>Accessibility</li>
-          <li>Web Design</li>
-          <li>UX</li>
+          <li>A11y</li>
+          <li>Web / UX Design</li>
           <li>Video Games</li>
           <li>Music</li>
           <li>Cooking</li>
-          <li>Manga</li>
+          <li>Manhwa</li>
         </ul>
       </section>
     </div>

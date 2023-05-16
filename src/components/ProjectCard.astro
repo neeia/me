@@ -80,6 +80,11 @@ const ghBase = "https://github.com/neeia/";
     height: 1.25em;
   }
   [astro-icon] {
-    filter: brightness(0) invert() brightness(50%);
+    filter: brightness(0) invert() brightness(0%);
+    opacity: 50%;
+    transition: opacity 0.15s;
+  }
+  [astro-icon]:hover {
+    opacity: 90%;
   }
 </style>

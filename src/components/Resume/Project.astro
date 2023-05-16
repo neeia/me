@@ -1,8 +1,10 @@
 ---
+import { Icon } from "astro-icon";
+
 export interface Props {
   name: string;
-  url: Url;
-  repo: Url;
+  url?: Url;
+  repo?: Url;
   date: string;
 }
 interface Url {
@@ -16,16 +18,25 @@ const { name, url, repo, date } = Astro.props;
 <li>
   <div>
     <h3>{name}</h3>
-    <span>
-      <a href={url.href} target="_blank" rel="noopener">
-        {url.name}
-      </a>
-    </span>
-    <span>
-      <a href={repo.href} target="_blank" rel="noopener noreferrer">
-        {repo.name}
-      </a>
-    </span>
+    {
+      url && (
+        <span>
+          <a href={url.href} target="_blank" rel="noopener">
+            {url.name}
+          </a>
+        </span>
+      )
+    }
+    {
+      repo && (
+        <span>
+          <Icon name="simple-icons:github" width="16px" height="16px" />
+          <a href={repo.href} target="_blank" rel="noopener noreferrer">
+            {repo.name}
+          </a>
+        </span>
+      )
+    }
   </div>
   <div class="date">{date}</div>
   <ul>
@@ -58,5 +69,9 @@ const { name, url, repo, date } = Astro.props;
     line-height: 1.25;
     margin-top: 0.75em;
     margin-bottom: 0.75em;
+  }
+
+  svg {
+    transform: translateY(3px);
   }
 </style>
